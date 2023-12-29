@@ -1,6 +1,3 @@
-#### My Advice is Please Use Linux or Mac When You Are Learning Zig Lang Window PC May Cost You To GiveUp early And You Dont Know What is The Error You Facing is about SomeTimes. The Date i wrote this article first time 28/12/2023, i may update in the future.
+## Zig Langauge is a low level programmer alternative C\C++
 
-To be Honest i am not sure what is wrong the window pc when i run same code that works well with linux and macOsx dont work in window Os
-there is must be something is missing in my window OS maybe Packages that need to work well with Zig Langauge in window OS,
-I will Update if i find out a salution, maybe i am lacking some experience with window OS with zig langauge.
-
+ My advice is to use Linux or Mac when you are learning Zig language. Windows PC may cause you to give up early and you don’t know what the error you are facing is about sometimes. The date I wrote this article for the first time was 28/12/2023. I may update it in the future. To be honest, I am not sure what is wrong with the Windows PC when I run the same code that works well with Linux and macOS. There must be something missing in my Windows OS, maybe packages that are needed to work well with Zig language in Windows OS. I will update if I find out a solution. Maybe I am lacking some experience with Windows OS with Zig language.
