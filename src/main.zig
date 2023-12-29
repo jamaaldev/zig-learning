@@ -31,7 +31,7 @@ pub fn main() !void {
             current_amount += amount_num;
         }
     }
-    // example using O(n2):
+    // example using O(n2) to find the max number in slice <--- 🤕what is slice, is a just arraylist items:😁
     var max_val: u32 = 0;
     for (array_Amount.items) |a| {
         for (array_Amount.items) |b| {
