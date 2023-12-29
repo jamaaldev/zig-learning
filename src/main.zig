@@ -31,8 +31,18 @@ pub fn main() !void {
             current_amount += amount_num;
         }
     }
-    std.debug.print("{}\n", .{array_Amount});
-    // std.io.getStdOut().writeAll(array_Amount);
+    // example using O(n2):
+    var max_val: u32 = 0;
+    for (array_Amount.items) |a| {
+        for (array_Amount.items) |b| {
+            if (a > b) {
+                max_val = a;
+            }
+        }
+    }
+    const max_item = std.mem.max(u32, array_Amount.items);
+    std.debug.print("using zig std method mem.max: {}\n", .{max_item});
+    std.debug.print("using O(n2): {}\n", .{max_val});
 }
 
 fn elf_amount(file_Data: []const u8) !void {
