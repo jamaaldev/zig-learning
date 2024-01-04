@@ -50,16 +50,16 @@ fn elf_amount(file_Data: []const u8) !void {
     const file = try std.fs.cwd().openFile(file_Data, .{});
     defer file.close();
     var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
-    const allocator = arena.allocator();
     defer arena.deinit();
+    const allocator = arena.allocator();
     const read_buff = try file.readToEndAlloc(allocator, 1024 * 1024);
     defer allocator.free(read_buff);
-    var it = std.mem.splitSequence(u8, read_buff, "\n");
-
+    // try std.io.getStdOut().writeAll(read_buff);
+    var iterator = std.mem.splitSequence(u8, read_buff, "\n");
     var array_amount = std.ArrayList(u32).init(allocator);
-    defer array_amount.deinit();
     var current_amount: u32 = 0;
-    while (it.next()) |amount| {
+    defer array_amount.deinit();
+    while (iterator.next()) |amount| {
         if (amount.len == 0) {
             try array_amount.append(current_amount);
             current_amount = 0;
@@ -69,6 +69,5 @@ fn elf_amount(file_Data: []const u8) !void {
         }
     }
     const max = std.mem.max(u32, array_amount.items);
-    std.debug.print("{}\n", .{max});
-    // std.io.getStdOut().readAll(max);
+    std.debug.print("The Max Number is: {}\n", .{max});
 }
